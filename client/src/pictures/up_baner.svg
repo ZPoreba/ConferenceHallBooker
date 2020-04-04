@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="459px" viewBox="0 0 1440 459" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+    <title>头部底图</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="15.1510024%" fx="50%" fy="15.1510024%" r="92.3209562%" gradientTransform="translate(0.500000,0.151510),scale(0.318750,1.000000),rotate(90.000000),scale(1.000000,1.249492),translate(-0.500000,-0.151510)" id="radialGradient-1">
+            <stop stop-color="#002B9D" offset="0%"></stop>
+            <stop stop-color="#011873" offset="100%"></stop>
+        </radialGradient>
+        <path d="M0,0 L1440,0 L1440,357 C1200,425 960,459 720,459 C480,459 240,425 0,357 L0,0 Z" id="path-2"></path>
+    </defs>
+    <g id="门户" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="头部底图">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="Rectangle-17" fill="url(#radialGradient-1)" xlink:href="#path-2"></use>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" mask="url(#mask-3)" cx="585" cy="155" r="2"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" mask="url(#mask-3)" cx="379" cy="180" r="2"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" mask="url(#mask-3)" cx="556" cy="120" r="2"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" mask="url(#mask-3)" cx="516" cy="200" r="2"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" mask="url(#mask-3)" cx="896" cy="140" r="2"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" mask="url(#mask-3)" cx="966" cy="160" r="2"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" mask="url(#mask-3)" cx="1146" cy="170" r="2"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" mask="url(#mask-3)" cx="1281" cy="79" r="2"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.4" mask="url(#mask-3)" cx="1295" cy="188" r="2"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="1406" cy="220" r="2"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="1350" cy="251" r="3"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="35" cy="233" r="2"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="56" cy="184" r="3"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="99" cy="345" r="3"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="59" cy="287" r="3"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="89" cy="257" r="3"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="1387" cy="294" r="3"></circle>
+            <circle id="Oval-4" fill="#FFFFFF" opacity="0.3" mask="url(#mask-3)" cx="1356" cy="347" r="3"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" mask="url(#mask-3)" cx="150" cy="159" r="2"></circle>
+            <circle id="Oval-4" stroke="#FFFFFF" opacity="0.45" mask="url(#mask-3)" cx="300" cy="79" r="2"></circle>
+        </g>
+    </g>
+</svg>
