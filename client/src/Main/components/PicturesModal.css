@@ -1,0 +1,30 @@
+.ant-carousel .slick-slide {
+    text-align: center;
+    overflow: hidden;
+  }
+
+.ant-carousel .slick-dots li {
+    background: rgb(0, 38, 146);
+  }
+
+.arrow-icon.anticon {
+    font-size: 200%;
+    margin-top: 3%;
+    color: rgb(0, 38, 146);
+}
+
+.slick-list {
+  height: auto;
+  width: 700px;
+}
+
+.ant-modal-content {
+  display: inline-grid;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%);
+}
+
+.ant-modal-title {
+  text-align: center;
+}

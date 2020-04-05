@@ -17,7 +17,7 @@ class AboutUs extends Component{
   render() {
     return (
         <OverPack style={{ overflow: 'hidden' }} playScale={0.3} >
-            <QueueAnim style={{background: "transparent", paddingTop: "4%"}}>
+            <QueueAnim style={{background: "transparent", paddingTop: "3%"}}>
                 <div key="a" className="pageHeader" style={{color: "#002692"}}>
                     About us
                 </div>
@@ -35,7 +35,7 @@ class AboutUs extends Component{
                     <br />
                     Don't waste your time, choose Conference Hall Booker
                 </div>
-                <img alt='intro' src={AboutUsImg} style={{float: "right", width: "25%", height: "25%"}}/>
+                <img alt='intro' src={AboutUsImg} style={{float: "right", width: "23%", height: "23%"}}/>
                 </div>
             </QueueAnim>
       </OverPack>

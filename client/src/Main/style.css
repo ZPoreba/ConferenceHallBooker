@@ -35,26 +35,24 @@
 .page1 {
     background: url("../pictures/down_baner.svg") no-repeat top;
     background-size: cover;
-    height: 105vh;
+    height: 95vh;
     text-align: center;
     padding-top: 10%;
     background-origin: content-box;
 }
 
 .page2 {
-    background: url("../pictures/down_baner.svg") no-repeat top;
+    background: url("../pictures/down_baner_reverted.svg") no-repeat bottom;
     background-size: cover;
-    height: 100vh;
+    height: 85vh;
     text-align: center;
-    padding-top: 10%;
     background-origin: content-box;
-    transform: rotate(180deg) scaleX(-1);
+    padding-bottom: 3%;
 }
 
 .page3 {
     background: transparent;
     height: 50vh;
-    padding-top: 10%;
     text-align: center;
     background-origin: content-box;
 }
@@ -104,4 +102,32 @@
     color: #002692; 
     position: absolute;
     font-size: 50px; 
+}
+
+.faqDiv {
+    background: linear-gradient(180deg,#2469f4,#113bbf);
+    box-shadow: 0 16px 40px #0f2da0;
+    transition: transform .3s cubic-bezier(.645,.045,.355,1),box-shadow .3s cubic-bezier(.645,.045,.355,1);
+    border-radius: 3%;
+    position: relative;
+    margin: auto;
+    width: 75%;
+    /* width: 300px; 
+    height: 300px; */
+    color: white;
+    font-size: 200%;
+    font-family: PingFang SC, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.ant-pagination-item-active a {
+    background: #002692;
+}
+
+.ant-input-search input {
+    background: transparent;
+    color: white;
 }

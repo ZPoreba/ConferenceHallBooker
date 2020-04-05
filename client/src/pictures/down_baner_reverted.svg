@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1440px"
+   height="1450px"
+   viewBox="0 0 1440 1450"
+   version="1.1"
+   id="svg4085"
+   sodipodi:docname="down_baner_reverted.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata4089">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2400"
+     inkscape:window-height="1271"
+     id="namedview4087"
+     showgrid="false"
+     inkscape:zoom="0.16275862"
+     inkscape:cx="720"
+     inkscape:cy="1216.5254"
+     inkscape:window-x="-9"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4085" />
+  <!-- Generator: Sketch 48 (47235) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4044">底图</title>
+  <desc
+     id="desc4046">Created with Sketch.</desc>
+  <defs
+     id="defs4060">
+    <linearGradient
+       x1="672.62267"
+       y1="1510.8136"
+       x2="947.41085"
+       y2="-2.4913644e-008"
+       id="linearGradient-1"
+       gradientTransform="scale(0.99654576,1.0034662)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#01028B"
+         offset="0%"
+         id="stop4048" />
+      <stop
+         stop-color="#0529A7"
+         offset="43.0834724%"
+         id="stop4050" />
+      <stop
+         stop-color="#0458C3"
+         offset="100%"
+         id="stop4052" />
+    </linearGradient>
+    <linearGradient
+       x1="218.45136"
+       y1="1710.5153"
+       x2="1444.9913"
+       y2="-44.68028"
+       id="linearGradient-2"
+       gradientTransform="scale(0.99654576,1.0034662)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#3B20C3"
+         offset="0%"
+         id="stop4055" />
+      <stop
+         stop-color="#287CD1"
+         offset="100%"
+         id="stop4057" />
+    </linearGradient>
+  </defs>
+  <g
+     id="门户"
+     transform="rotate(-180,720,1550)"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1">
+    <g
+       id="简单可靠的技术"
+       transform="translate(0,1650)">
+      <g
+         id="底图">
+        <path
+           d="m 0,62 c 224,82.66667 464,82.66667 720,0 256,-82.666667 496,-82.666667 720,0 V 1450 H -7.3931397e-7 Z"
+           id="Rectangle-20"
+           style="fill:url(#linearGradient-1)"
+           inkscape:connector-curvature="0" />
+        <path
+           d="M 7.3931388e-7,62 C 224,144.66667 464,144.66667 720,62 c 256,-82.666667 496,-82.666667 720,0 V 1450 H 0 Z"
+           id="path4063"
+           transform="matrix(-1,0,0,1,1440,0)"
+           style="opacity:0.35;fill:url(#linearGradient-2)"
+           inkscape:connector-curvature="0" />
+        <circle
+           id="Oval-4"
+           cx="510"
+           cy="348"
+           r="2"
+           style="opacity:0.4;fill:#ffffff" />
+        <circle
+           id="circle4066"
+           cx="431"
+           cy="273"
+           r="2"
+           style="opacity:0.45;stroke:#ffffff" />
+        <circle
+           id="circle4068"
+           cx="951"
+           cy="273"
+           r="2"
+           style="opacity:0.4;fill:#ffffff" />
+        <circle
+           id="circle4070"
+           cx="1021"
+           cy="343"
+           r="2"
+           style="opacity:0.4;fill:#ffffff" />
+        <circle
+           id="circle4072"
+           cx="1201"
+           cy="243"
+           r="2"
+           style="opacity:0.45;stroke:#ffffff" />
+        <circle
+           id="circle4074"
+           cx="1416"
+           cy="212"
+           r="2"
+           style="opacity:0.4;fill:#ffffff" />
+        <circle
+           id="circle4076"
+           cx="1320"
+           cy="371"
+           r="2"
+           style="opacity:0.4;fill:#ffffff" />
+        <circle
+           id="circle4078"
+           cx="75"
+           cy="222"
+           r="2"
+           style="opacity:0.45;stroke:#ffffff" />
+        <circle
+           id="circle4080"
+           cx="235"
+           cy="322"
+           r="2"
+           style="opacity:0.45;stroke:#ffffff" />
+      </g>
+    </g>
+  </g>
+</svg>

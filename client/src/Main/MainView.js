@@ -5,6 +5,8 @@ import './style.css';
 import Animate from 'rc-animate';
 import AboutUs from './AboutUs';
 import OurOffer from './OurOffer';
+import FAQ from './FAQ';
+import ContactUs from './ContactUs';
 
 
 const Div = (props) => {
@@ -48,7 +50,7 @@ class MainView extends Component{
                     showProp="show"
                     transitionName="fade"
                     delay={400}>
-                          <Div show={this.state.show}  style={{animationDuration: "2.5s"}} key="a">
+                          <Div show={this.state.show}  style={{animationDuration: "1.5s"}} key="a">
                             <img src={logo} className="logo-img" alt='logo' />
                           </Div>
                   </Animate>
@@ -62,8 +64,12 @@ class MainView extends Component{
         <div key={3}  ref="page1" className="page1">
           <OurOffer/>
         </div>,
-        <div key={4}  ref="page2" className="page2"></div>,
-        <div key={5}  ref="page3" className="page3"></div>]
+        <div key={4}  ref="page2" className="page2">
+          <FAQ/>
+        </div>,
+        <div key={5}  ref="page3" className="page3">
+          <ContactUs/>
+        </div>]
     );
   }
 };
