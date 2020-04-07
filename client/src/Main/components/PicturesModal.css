@@ -14,8 +14,8 @@
 }
 
 .slick-list {
-  height: auto;
-  width: 700px;
+  height: 50vh;
+  width: 45vw;
 }
 
 .ant-modal-content {

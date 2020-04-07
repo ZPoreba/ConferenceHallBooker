@@ -13,21 +13,22 @@ class CustomLayout extends React.Component{
     constructor () {
         super();
         this.state = {
-            menuType: "nonAuthorized"
-        }
-    }
-    
-    componentDidMount() {
-        this.props.history.push('/main');
+                    menuType: undefined
+                }
+        this.setMenu();
     }
 
-    onLoginNregisterClick = () => {
-        this.setState({menuType: "onLoginNregister"});
+    setMenu() {
+        let type = window.location.pathname == "/" ? "nonAuthorized": "";
+        type = window.location.pathname == "/login" ? "onLoginNregister": type;
+        type = window.location.pathname == "/register" ? "onLoginNregister": type;
+        type = window.location.pathname == "/authorized" || window.location.pathname == "/help" ? "onAuthorized": type;
+
+        this.state.menuType = type;
     }
 
     onLogoClick = () => {
         document.querySelector('body').scrollIntoView();
-        this.setState({menuType: "nonAuthorized"});
     }
 
     onPageClick = (id) => {
@@ -42,32 +43,32 @@ class CustomLayout extends React.Component{
                 <Menu.Item
                     key="register"
                     style={{float: 'right'}}>
-                    <Link style={{color: "white"}} to="/register" onClick={this.onLoginNregisterClick} >SIGN UP</Link>
+                    <Link style={{color: "white"}} to="/register" >SIGN UP</Link>
                 </Menu.Item>
                 <Menu.Item
                     key="login"
                     style={{float: 'right'}}>
-                    <Link style={{color: "white"}} to="/login" onClick={this.onLoginNregisterClick} >LOG IN</Link>
+                    <Link style={{color: "white"}} to="/login" >LOG IN</Link>
                 </Menu.Item>
                 <Menu.Item
                     key="about_us"
                     style={{float: 'center'}}>
-                    <Link style={{color: "white"}} to="/main" onClick={this.onPageClick.bind(this, 0)} >About us</Link>
+                    <Link style={{color: "white"}} to="/" onClick={this.onPageClick.bind(this, 0)} >About us</Link>
                 </Menu.Item>
                 <Menu.Item
                     key="our_offer"
                     style={{float: 'center'}}>
-                    <Link style={{color: "white"}} to="/main" onClick={this.onPageClick.bind(this, 1)} >Our offer</Link>
+                    <Link style={{color: "white"}} to="/" onClick={this.onPageClick.bind(this, 1)} >Our offer</Link>
                 </Menu.Item>
                 <Menu.Item
                     key="faq"
                     style={{float: 'center'}}>
-                    <Link style={{color: "white"}} to="/main" onClick={this.onPageClick.bind(this, 2)} >FAQ</Link>
+                    <Link style={{color: "white"}} to="/" onClick={this.onPageClick.bind(this, 2)} >FAQ</Link>
                 </Menu.Item>
                 <Menu.Item
                     key="contact_us"
                     style={{float: 'center'}}>
-                    <Link style={{color: "white"}} to="/main" onClick={this.onPageClick.bind(this, 3)} >Contact us</Link>
+                    <Link style={{color: "white"}} to="/" onClick={this.onPageClick.bind(this, 3)} >Contact us</Link>
                 </Menu.Item>
             </Menu>
         );
@@ -92,7 +93,49 @@ class CustomLayout extends React.Component{
         );
     }
 
+    onAuthorizedMenu = () => {
+        return (
+            <Menu
+            theme="light"
+            mode="horizontal" >
+                <Menu.Item
+                    key="logout"
+                    style={{float: 'right'}}>
+                    <Link style={{color: "white"}} to="/">LOG OUT</Link>
+                </Menu.Item>
+                <Menu.Item
+                    key="search"
+                    style={{float: 'center'}}>
+                    <Link style={{color: "white"}} to="/authorized" >Search</Link>
+                </Menu.Item>
+                <Menu.Item
+                    key="profile"
+                    style={{float: 'center'}}>
+                    <Link style={{color: "white"}} to="/profile" >Profile</Link>
+                </Menu.Item>
+                <Menu.Item
+                    key="my_reservations"
+                    style={{float: 'center'}}>
+                    <Link style={{color: "white"}} to="/my_reservations" >My reservations</Link>
+                </Menu.Item>
+                <Menu.Item
+                    key="help"
+                    style={{float: 'center'}}>
+                    <Link style={{color: "white"}} to="/help" >Help</Link>
+                </Menu.Item>
+            </Menu>
+        );
+    }
+
+    renderMenu = () => {
+        if ( this.state.menuType === "nonAuthorized" ) return <this.nonAuthorizedMenu />;
+        if ( this.state.menuType === "onLoginNregister" ) return <this.loginNregisterMenu />;
+        if ( this.state.menuType === "onAuthorized" ) return <this.onAuthorizedMenu />;   
+        return <div />
+    }
+
     render(){
+        this.setMenu();
         return (
         <Layout className="layout">
             <Header style={{
@@ -103,9 +146,9 @@ class CustomLayout extends React.Component{
                     }}>
                 <div style={{color: "white", float: "left", width: "200px"}}>
                     <img src={logo} alt='logo'/>
-                    <Link style={{color: "white", fontFamily: "Times New Roman"}} to="/main" onClick={this.onLogoClick} >  Conference Hall Booker </Link>
+                    <Link style={{color: "white", fontFamily: "Times New Roman"}} to="/" onClick={this.onLogoClick} >  Conference Hall Booker </Link>
                 </div>
-                { this.state.menuType === "nonAuthorized" ? <this.nonAuthorizedMenu /> : <this.loginNregisterMenu /> }
+                <this.renderMenu />
             </Header>
             <Content style={{ padding: '0 0px', background: 'none', height: "100%" }}>
                 <div>

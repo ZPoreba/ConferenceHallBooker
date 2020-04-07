@@ -27,7 +27,7 @@
 }
 
 .page0 {
-    height: 60vh;
+    height: 70vh;
     padding-top: 5%;
     background-origin: content-box;
 }
@@ -37,7 +37,7 @@
     background-size: cover;
     height: 95vh;
     text-align: center;
-    padding-top: 10%;
+    padding-top: 5%;
     background-origin: content-box;
 }
 
@@ -52,9 +52,10 @@
 
 .page3 {
     background: transparent;
-    height: 50vh;
+    height: 100vh;
     text-align: center;
     background-origin: content-box;
+    padding-top: 15%;
 }
 
 .logo-img {
@@ -112,8 +113,6 @@
     position: relative;
     margin: auto;
     width: 75%;
-    /* width: 300px; 
-    height: 300px; */
     color: white;
     font-size: 200%;
     font-family: PingFang SC, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;

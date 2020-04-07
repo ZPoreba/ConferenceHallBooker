@@ -1,0 +1,32 @@
+.authorizedDiv {
+    background: white;
+    box-shadow: 0 16px 40px #0f2da0;
+    transition: transform .3s cubic-bezier(.645,.045,.355,1),box-shadow .3s cubic-bezier(.645,.045,.355,1);
+    position: relative;
+    margin: auto;
+    width: 30%; 
+    height: 100%;
+    color: white;
+    font-size: 200%;
+    font-family: PingFang SC, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+.listDiv {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    height: 300px;
+    transform: translate(0%, -50%) 
+}
+
+.demo-infinite-container {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    overflow: auto;
+    padding: 8px 24px;
+    height: 90vh;
+  }
