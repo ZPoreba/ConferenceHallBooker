@@ -28,7 +28,7 @@ class MainView extends Component{
     this.setState({
       show: true
     });
-  }
+  };
 
   socialmediaIcons = () => {
     return (
@@ -39,7 +39,7 @@ class MainView extends Component{
         <InstagramOutlined key={4} className="social-icon" />
       </div>
     );
-  }
+  };
 
   render() {
     return (

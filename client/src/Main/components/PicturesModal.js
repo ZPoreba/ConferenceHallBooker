@@ -1,4 +1,4 @@
-import { Modal, Carousel, Button } from 'antd';
+import { Modal, Carousel } from 'antd';
 import React, { Component } from 'react';
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
 import './PicturesModal.css';
@@ -63,14 +63,20 @@ class PicturesModal extends Component{
         footer={[]}
         onCancel={this.handleCancel}>
             <Carousel className="custom-carousel" ref={this.carousel}>
-                <div className="imageWrapper">
-                    { this.state.ready && this.state.title ? <img src={this.state.images[this.state.title][0]} alt={this.state.title} /> : null }
+                <div>
+                    <div className="imageWrapper" >
+                        { this.state.ready && this.state.title ? <img src={this.state.images[this.state.title][0]} alt={this.state.title} /> : null }
+                    </div>
                 </div>
-                <div className="imageWrapper">
-                { this.state.ready && this.state.title ? <img src={this.state.images[this.state.title][1]} alt={this.state.title} /> : null }
+                <div>
+                    <div className="imageWrapper" >
+                        { this.state.ready && this.state.title ? <img src={this.state.images[this.state.title][1]} alt={this.state.title} /> : null }
+                    </div>
                 </div>
-                <div className="imageWrapper">
-                    { this.state.ready && this.state.title ? <img src={this.state.images[this.state.title][2]} alt={this.state.title} /> : null }
+                <div>
+                    <div className="imageWrapper" >
+                        { this.state.ready && this.state.title ? <img src={this.state.images[this.state.title][2]} alt={this.state.title} /> : null }
+                    </div>
                 </div>
             </Carousel>
             <div style={{overflow: "hidden"}}>

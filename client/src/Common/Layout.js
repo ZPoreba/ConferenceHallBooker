@@ -10,21 +10,19 @@ const { Header, Content } = Layout;
 
 class CustomLayout extends React.Component{
 
-    constructor () {
-        super();
-        this.state = {
-                    menuType: undefined
-                }
+    constructor (props) {
+        super(props);
+        this.menuType = undefined;
         this.setMenu();
     }
 
     setMenu() {
-        let type = window.location.pathname == "/" ? "nonAuthorized": "";
-        type = window.location.pathname == "/login" ? "onLoginNregister": type;
-        type = window.location.pathname == "/register" ? "onLoginNregister": type;
-        type = window.location.pathname == "/authorized" || window.location.pathname == "/help" ? "onAuthorized": type;
+        let type = window.location.pathname === "/" ? "nonAuthorized": "";
+        type = window.location.pathname === "/login" ? "onLoginNregister": type;
+        type = window.location.pathname === "/register" ? "onLoginNregister": type;
+        type = window.location.pathname === "/authorized" || window.location.pathname === "/help" ? "onAuthorized": type;
 
-        this.state.menuType = type;
+        this.menuType = type;
     }
 
     onLogoClick = () => {
@@ -128,9 +126,9 @@ class CustomLayout extends React.Component{
     }
 
     renderMenu = () => {
-        if ( this.state.menuType === "nonAuthorized" ) return <this.nonAuthorizedMenu />;
-        if ( this.state.menuType === "onLoginNregister" ) return <this.loginNregisterMenu />;
-        if ( this.state.menuType === "onAuthorized" ) return <this.onAuthorizedMenu />;   
+        if ( this.menuType === "nonAuthorized" ) return <this.nonAuthorizedMenu />;
+        if ( this.menuType === "onLoginNregister" ) return <this.loginNregisterMenu />;
+        if ( this.menuType === "onAuthorized" ) return <this.onAuthorizedMenu />;
         return <div />
     }
 

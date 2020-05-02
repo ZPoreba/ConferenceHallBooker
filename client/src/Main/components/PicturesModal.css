@@ -10,7 +10,7 @@
 .arrow-icon.anticon {
     font-size: 200%;
     margin-top: 3%;
-    color: rgb(0, 38, 146);
+    color: white;
 }
 
 .slick-list {
@@ -27,4 +27,9 @@
 
 .ant-modal-title {
   text-align: center;
+}
+
+.imageWrapper {
+    display: flex;
+    justify-content: center;
 }

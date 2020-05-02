@@ -12,23 +12,31 @@
     border-radius: 3%;
     position: relative;
     margin: auto;
-    width: 30%; 
-    height: 40%;
+    width: 25%;
+    height: 200px;
     color: white;
     font-size: 200%;
     font-family: PingFang SC, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
     display: block;
     align-items: center;
     justify-content: center;
-    margin-top: 15%;
+    margin-top: 12%;
 }
 
 .loginInput {
     position: absolute;
-    top: 45%;
+    top: 35%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) 
+}
+
+.registrationInput {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
 .registrationDiv {
@@ -38,15 +46,15 @@
     border-radius: 3%;
     position: relative;
     margin: auto;
-    width: 30%; 
-    height: 70%;
+    width: 25%;
+    height: 400px;
     color: white;
     font-size: 200%;
     font-family: PingFang SC, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
     display: block;
     align-items: center;
     justify-content: center;
-    margin-top: 8%;
+    margin-top: 12%;
 }
 
 .ant-input-password input {
@@ -55,4 +63,31 @@
   
 .ant-input-prefix input {
     background-color: #0f2da0;
+}
+
+.custom-modal {
+    position: absolute;
+    background-color: inherit;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 2px;
+    pointer-events: auto;
+    display: inline-grid;
+    left: 20%;
+}
+
+.custom-modal-header {
+    background: none;
+    border-bottom: none;
+}
+
+.custom-modal-title {
+    color: white;
+    justify-content: center;
+    display: flex;
+    font-size: 25px;
+}
+
+.custom-modal-close {
+    color: white;
 }

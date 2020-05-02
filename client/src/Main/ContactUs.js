@@ -8,10 +8,6 @@ import { FacebookOutlined, TwitterOutlined, SkypeOutlined, InstagramOutlined } f
 
 class ContactUs extends Component{
 
-  constructor() {
-    super();
-  }
-
   socialmediaIcons = () => {
     return ([
       <FacebookOutlined style={{fontSize: "35px", margin: "10px"}}/>,

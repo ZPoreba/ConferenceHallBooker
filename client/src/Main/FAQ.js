@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import QueueAnim from 'rc-queue-anim';
 import './style.css';
 import { OverPack } from 'rc-scroll-anim';
-import { List, Input, Button } from 'antd';
+import { List, Input } from 'antd';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import { pageService } from './services/pageService';
 
@@ -110,7 +110,7 @@ class FAQ extends Component{
                                                 ]}
                                             >
                                                 <List.Item.Meta
-                                                title={<a>{item.title}</a>}
+                                                title={<p>{item.title}</p>}
                                                 />
                                                 {item.content}
                                             </List.Item>

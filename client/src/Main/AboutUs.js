@@ -7,10 +7,6 @@ import { OverPack } from 'rc-scroll-anim';
 
 class AboutUs extends Component{
 
-  constructor() {
-    super();
-  }
-
   componentDidMount() {
   }
 

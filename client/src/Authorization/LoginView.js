@@ -10,8 +10,8 @@ class LoginView extends Component {
     <div className="Login banner" style={{height: "100vh", paddingTop: '64px'}}>
         <div className="loginDiv">
           <div className="loginInput">
-            <Input size="large" placeholder="email" style={{width: "65%", backgroundColor: "#0f2da0", color: "white", border: "none"}} />
-            <Input.Password size="large" placeholder="password" style={{width: "65%", backgroundColor: "#0f2da0", color: "white", border: "none"}} />
+            <Input size="large" placeholder="email" style={{width: "85%", backgroundColor: "#0f2da0", color: "white", border: "none"}} />
+            <Input.Password size="large" placeholder="password" style={{width: "85%", backgroundColor: "#0f2da0", color: "white", border: "none"}} />
           </div>
             <Button size="large" className="button" style={{top: "65%", backgroundColor: "#0f2da0", border: "none", color: "white"}}>
               Log in

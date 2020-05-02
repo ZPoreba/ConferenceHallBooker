@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.css';
-import { List, Input, Button } from 'antd';
+import { List } from 'antd';
 import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 import InfiniteScroll from 'react-infinite-scroller';
 
