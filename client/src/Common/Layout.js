@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import logo from '../pictures/Common_logo.png';
 import littleBaner from '../pictures/up_baner_little.png';
 import './style.css';
+import { authService } from '../Authorization/services/AuthService'
 
 
 const { Header, Content } = Layout;
@@ -99,7 +100,7 @@ class CustomLayout extends React.Component{
                 <Menu.Item
                     key="logout"
                     style={{float: 'right'}}>
-                    <Link style={{color: "white"}} to="/">LOG OUT</Link>
+                    <Link style={{color: "white"}} to="/" onClick={authService.logout}>LOG OUT</Link>
                 </Menu.Item>
                 <Menu.Item
                     key="search"
