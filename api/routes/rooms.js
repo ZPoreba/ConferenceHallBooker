@@ -7,6 +7,8 @@ mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 var Room = require('../schemas/room.js');
+const path = require('path');
+const fs = require('fs');
 
 
 function getQuery(values_of_fields) {
@@ -62,8 +64,12 @@ function getFilterQuery(values_of_fields) {
         }
       });
 
-      db_query[key] = {};
-      db_query[key]["$all"] = value;
+      if (key === 'price' || key === 'capacity' || key === 'area') db_query[key] = { "$gte": Number(value[0]), "$lte": Number(value[1]) };
+      else {
+        db_query[key] = {};
+        db_query[key]["$in"] = value;
+      }
+
     }
     else {
       db_query[key] = value;
@@ -86,8 +92,9 @@ function sendRecords(type, res, values_of_fields, projected_fields) {
 
     Room.find(final_db_query, projected_fields, (err, items) => {
 
-      if(items === undefined || items.length === 0) {
+      if(items === undefined) {
         res.status(400);
+        res.send(err);
         res.end();
         return;
       }
@@ -112,8 +119,27 @@ router.get('/filter', function(req, res, next) {
 
     var projected_fields = {_id: 0};
     var values_of_fields = req.query;
+
     sendRecords("filter", res, values_of_fields, projected_fields);
   
+});
+
+/* GET amount of pictures for room */
+router.get('/pictures_names', function(req, res, next) {
+
+  var room_id = req.query.id;
+  var directoryPath = path.join(__dirname, `../pictures/rooms/${room_id}`);
+
+  fs.readdir(directoryPath, function (err, files) {
+      if (err) {
+        res.status(400);
+        res.end();
+        return;
+      } 
+      res.status(200);
+      res.send(files);
+      res.end();
+  });
 });
 
 module.exports = router;

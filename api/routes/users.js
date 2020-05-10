@@ -63,4 +63,20 @@ router.get('/', function(req, res, next) {
 
 });
 
+/* POST new proxy user. */
+router.post('/', async function(req, res, next) {
+  var user = req.query;
+  
+  var newId = await User.findOne().sort({id:-1});
+  newId = Number(newId.id) + 1;
+  user["id"] = newId;
+
+  user = new User(user, { _id: false });
+  user.save();
+  
+  res.status(200);
+  res.send(user);
+  res.end();
+});
+
 module.exports = router;

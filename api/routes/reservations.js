@@ -7,6 +7,7 @@ mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 var Reservation = require('../schemas/reservation.js');
+var Room = require('../schemas/room.js');
 
 
 function getQuery(type, values_of_fields) {
@@ -59,8 +60,6 @@ function getQuery(type, values_of_fields) {
     or_array.push(db_query);
     var final_db_query = {$or: or_array};
 
-    console.log(final_db_query);
-
     return final_db_query;  
 }
 
@@ -101,9 +100,8 @@ router.get('/filter', function(req, res, next) {
   
   });
 
-/* PUT new reservation. */
-router.put('/', async function(req, res, next) {
-
+/* POST new reservation. */
+router.post('/', async function(req, res, next) {
   var reservation = req.query;
   
   var newId = await Reservation.findOne().sort({id:-1});
@@ -115,7 +113,72 @@ router.put('/', async function(req, res, next) {
 
   reservation = new Reservation(reservation, { _id: false });
   reservation.save();
+
+  var roomId = parseInt(reservation['room_id']);
+  Room.update({id: roomId}, 
+              { $push: { reservations: newId } },
+              function(err, result) {
+                console.log(result);
+              })
   
+  res.status(200);
+  res.send(reservation);
+  res.end();
+});
+
+/* PUT edit reservation. */
+router.put('/', async function(req, res, next) {
+  var reservation = req.query;
+  var id = reservation.id;
+  delete reservation['id'];
+
+  if (reservation.additional_services !== undefined)
+    reservation.additional_services = JSON.parse(reservation.additional_services);
+  
+  Reservation.update({id: id}, 
+              reservation,
+              function(err, result) {
+                console.log(result);
+
+                if (!err) {
+                  res.status(200);
+                  res.send({status: "ok"});
+                  res.end();
+                }
+                else {
+                  res.status(400);
+                  res.send({status: "error"});
+                  res.end();
+                }
+
+              });
+});
+
+/* DELETE delete reservation. */
+router.delete('/', async function(req, res, next) {
+  var reservation = req.query;
+
+  var roomId = parseInt(reservation['room_id']);
+  Room.update({id: roomId}, 
+              { $pop: { reservations: reservation.id } },
+              function(err, result) {
+                console.log(result);
+              })
+
+
+  Reservation.remove({ id: reservation.id }, function(err) {
+      if (!err) {
+        res.status(200);
+        res.send({status: "ok"});
+        res.end();
+      }
+      else {
+        res.status(400);
+        res.send({status: "error"});
+        res.end();
+      }
+  });
+
 });
 
 module.exports = router;

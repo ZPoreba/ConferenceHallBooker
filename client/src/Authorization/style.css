@@ -20,7 +20,7 @@
     display: block;
     align-items: center;
     justify-content: center;
-    margin-top: 12%;
+    margin-top: 8%;
 }
 
 .loginInput {
@@ -33,7 +33,7 @@
 
 .registrationInput {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
@@ -47,14 +47,14 @@
     position: relative;
     margin: auto;
     width: 25%;
-    height: 400px;
+    height: 420px;
     color: white;
     font-size: 200%;
     font-family: PingFang SC, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
     display: block;
     align-items: center;
     justify-content: center;
-    margin-top: 12%;
+    margin-top: 8%;
 }
 
 .ant-input-password input {

@@ -1,0 +1,90 @@
+.rdrDay {
+    height: 6em;
+}
+
+.rdrCalendarWrapper {
+    background: transparent;
+}
+
+.rdrDayDisabled {
+    background-color: transparent;
+}
+
+.rdrDayDisabled .rdrDayNumber span {
+    color: #de8181;
+}
+
+.rdrDayNumber span {
+    font-size: large;
+}
+
+.dataRange {
+    text-align: left;
+    padding-top: 1%;
+    padding-left: 1%;
+    width: max-content;
+    float: left;
+}
+
+.card {
+    text-align: left;
+    width: max-content;
+    padding-top: 1%;
+    padding-right: 2%;
+    float: right;
+}
+
+.bookItButton {
+    float: right;
+    margin: 3%;
+}
+
+.bookingOptions {
+    text-align: left;
+    float: left;
+    padding-left: 10%;
+}
+
+.bookingOptions .ant-checkbox-wrapper {
+    display: block;
+    text-align: left;
+    font-size: medium;
+}
+
+.detailsForm {
+    text-align: left;
+    float: left;
+    padding-left: 10%;
+}
+
+.row1 {
+    height: max-content;
+}
+
+.row2 {
+    float: left;
+    width: 55vw;
+    height: max-content; 
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+.detailsForm .ant-checkbox-wrapper {
+    font-size: medium;
+}
+
+.card .ant-card-cover img {
+    height: 20vh;
+    object-fit: cover;
+}
+
+.carouselDiv {
+    float: right;
+    margin-top: 5%
+}
+
+.imageWrapper {
+    display: flex;
+    justify-content: center;
+}

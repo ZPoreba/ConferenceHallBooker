@@ -3,8 +3,12 @@ import {Route, Switch} from 'react-router-dom';
 import LoginView from './Authorization/LoginView';
 import MainView from './Main/MainView';
 import RegistrationView from './Authorization/RegistrationView';
-import AuthorizedMain from './AuthorizedMain/AuthorizedMain';
+import AuthorizedMainView from './AuthorizedMain/AuthorizedMainView';
 import FAQ from './Main/FAQ';
+import BookingPageView from './RoomPage/BookingPageView';
+import RoomPageView from './RoomPage/RoomPageView';
+import MyReservationsView from './MyReservations/MyReservationsView';
+import EditPageView from './RoomPage/EditPageView';
 
 
 class FAQWrapper extends React.Component {
@@ -20,8 +24,12 @@ const BaseRouter = () => (
        <Switch>
             <Route path="/register" component={RegistrationView} />
             <Route path="/login" component={LoginView} />
-            <Route path="/authorized" component={AuthorizedMain} />
+            <Route path="/authorized" component={AuthorizedMainView} />
             <Route path="/help" component={FAQWrapper} />
+            <Route path="/my_reservations" component={MyReservationsView} />
+            <Route path="/booking" component={BookingPageView} />
+            <Route path="/edit" component={EditPageView} />
+            <Route path="/room" component={RoomPageView} />
             <Route path="/" component={MainView} />
        </Switch>
    </div>

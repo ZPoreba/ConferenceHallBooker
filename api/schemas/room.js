@@ -9,7 +9,9 @@ var RoomSchema = new Schema(
       price: {type: Number, required: true},
       capacity: {type: Number, required: true},
       area: {type: Number, required: true},
-      details: {type: String}
+      details: {type: String},
+      reservations: {type: Array},
+      additional_services: {type: Array}
     },
     { collection : 'Rooms' }
   );

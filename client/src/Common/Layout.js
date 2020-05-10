@@ -15,13 +15,23 @@ class CustomLayout extends React.Component{
         super(props);
         this.menuType = undefined;
         this.setMenu();
+        this.iconPath = '/';
     }
 
     setMenu() {
         let type = window.location.pathname === "/" ? "nonAuthorized": "";
         type = window.location.pathname === "/login" ? "onLoginNregister": type;
         type = window.location.pathname === "/register" ? "onLoginNregister": type;
-        type = window.location.pathname === "/authorized" || window.location.pathname === "/help" ? "onAuthorized": type;
+        type = window.location.pathname === "/authorized" 
+            || window.location.pathname === "/help"
+            || window.location.pathname === "/my_reservations" 
+            || window.location.pathname.startsWith("/room/")
+            || window.location.pathname.startsWith("/booking/")
+            || window.location.pathname.startsWith("/edit/")
+            || window.location.pathname === "/profile" ? "onAuthorized": type;
+
+        if (type === "onAuthorized") this.iconPath = '/authorized';
+        else this.iconPath = '/';
 
         this.menuType = type;
     }
@@ -145,7 +155,7 @@ class CustomLayout extends React.Component{
                     }}>
                 <div style={{color: "white", float: "left", width: "200px"}}>
                     <img src={logo} alt='logo'/>
-                    <Link style={{color: "white", fontFamily: "Times New Roman"}} to="/" onClick={this.onLogoClick} >  Conference Hall Booker </Link>
+                    <Link style={{color: "white", fontFamily: "Times New Roman"}} to={this.iconPath} onClick={this.onLogoClick} >  Conference Hall Booker </Link>
                 </div>
                 <this.renderMenu />
             </Header>

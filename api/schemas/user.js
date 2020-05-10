@@ -15,6 +15,7 @@ var UserSchema = new Schema(
       is_proxy: {type: Boolean, default: false},
       subusers: [Number],
       confirmed: {type: Boolean, default: false},
+      supervisor_id: {type: Number}
     },
     { 
       collection : 'Users',

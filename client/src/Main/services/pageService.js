@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000/api";//process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL;
 
 const checkStatus = (response) => {
     if(!response.ok) {
@@ -8,7 +8,7 @@ const checkStatus = (response) => {
 }
 
 const getFAQ = () => {
-    const url = `${API_URL}/faq`;
+    const url = `${API_URL}/api/faq`;
     const fetchData = {
         method: "GET",
         headers: new Headers(),

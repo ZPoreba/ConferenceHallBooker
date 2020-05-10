@@ -4,6 +4,7 @@ import './style.css';
 import { Input, Button } from 'antd';
 import { authService } from "./services/AuthService";
 
+
 class LoginView extends Component {
 
     constructor(props) {
@@ -23,12 +24,16 @@ class LoginView extends Component {
     loginHandler = async event => {
         event.preventDefault();
 
-        if (!(this.state.email && this.state.password)) return;
+        if (!(this.state.email && this.state.password)) { 
+            alert('All fields have to be filled');
+            return; 
+        }
 
         const response = await authService.login(this.state.email, this.state.password);
         if(response.token) {
             const user = {
                 email: this.state.email,
+                user_id: response.user.id,
                 token: response.token
             };
             authService.authenticateUser(user);

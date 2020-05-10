@@ -20,6 +20,7 @@ router.use('/users', usersRouter);
 router.use('/rooms', roomsRouter);
 router.use('/reservations', reservationsRouter);
 router.use('/faq', faqRouter);
+router.use("/proxy_user", usersRouter);
 router.use("/testAPI", testAPIRouter);
 
 

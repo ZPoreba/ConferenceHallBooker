@@ -5,7 +5,7 @@
     position: relative;
     margin: auto;
     width: 30%; 
-    height: 100%;
+    height: 100vh;
     color: white;
     font-size: 200%;
     font-family: PingFang SC, Helvetica Neue For Number, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -13,6 +13,14 @@
     align-items: center;
     justify-content: center;
     float: left;
+    text-align: left;
+    padding-left: 3%;
+    margin-top: -64px;
+}
+
+.authorizedDiv .ant-checkbox-wrapper {
+  display: block;
+  text-align: left;
 }
 
 .listDiv {
@@ -29,4 +37,8 @@
     overflow: auto;
     padding: 8px 24px;
     height: 90vh;
+  }
+
+  .demo-infinite-container .ant-list-item:hover {
+    background: #d9e0fa;
   }
