@@ -1,0 +1,27 @@
+.ProfilePage .ant-input-affix-wrapper-disabled .ant-input[disabled] {
+    color: black;
+}
+
+.ProfilePage .ant-picker-input > input[disabled] {
+    color: black;
+}
+
+.ProfilePage  .ant-picker {
+    width: 100%;
+}
+
+.ProfilePage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.userDiv {
+    align-items: center;
+    justify-content: center;
+}
+
+.ProfilePage .ant-card {
+    box-shadow: 0 16px 40px #0f2da0;
+    transition: transform .3s cubic-bezier(.645,.045,.355,1),box-shadow .3s cubic-bezier(.645,.045,.355,1);
+}

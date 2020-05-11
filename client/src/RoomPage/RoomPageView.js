@@ -56,6 +56,7 @@ class RoomPageView extends Component {
     }
 
     render() { 
+        this.is_admin = JSON.parse(localStorage.getItem('user')).is_admin;
         console.log(this.state)
         return (
             <div className="Room Page" style={{height: "100vh", paddingTop: '64px'}}>
@@ -86,11 +87,14 @@ class RoomPageView extends Component {
                             }
                             </ul>
                             <h2 style={{bottom: '6%', position: 'absolute', textAlign: "left"}}>Price: {this.state.roomData.price} zł/day</h2>
-                            <Button type="primary" 
-                                    size="large"
-                                    onClick={() => this.props.history.push(`/booking/${this.state.roomId}`)}
-                                    style={{backgroundColor: '#0f2da0', border: 'none', bottom: '6%', right: '3%', position: 'absolute'}} 
-                                    className="bookItButton">Book it</Button>
+                            {
+                                !this.is_admin  ? 
+                                    <Button type="primary" 
+                                            size="large"
+                                            onClick={() => this.props.history.push(`/booking/${this.state.roomId}`)}
+                                            style={{backgroundColor: '#0f2da0', border: 'none', bottom: '6%', right: '3%', position: 'absolute'}} 
+                                            className="bookItButton">Book it</Button>: null
+                            }
                              
                         </Card>
                         <div className='carouselDiv' >

@@ -28,10 +28,8 @@ class BookingPageView extends Component {
             reservationId = parseInt(splitedPath[3]);
         } 
 
-        let user = JSON.parse(localStorage.getItem('user'));
         this.bookingData = {
             room_id: roomId,
-            user_id: user.user_id,
             from: " - ",
             to: " - ",
             price: 0,
@@ -72,8 +70,10 @@ class BookingPageView extends Component {
         let from = this.editing_reservation.from;
         let to = this.editing_reservation.to;
 
-        let newAdditionalServices = this.editing_reservation.additional_services.map( as => { return as + " + " + consts.additionalServicesPrices[as] });
-        this.setState({checkedList: newAdditionalServices});
+        if(this.editing_reservation.additional_services !== undefined) {
+            let newAdditionalServices = this.editing_reservation.additional_services.map( as => { return as + " + " + consts.additionalServicesPrices[as] });
+            this.setState({checkedList: newAdditionalServices});
+        }
     
         this.onDateChange({ selection: { startDate: new Date(from), endDate: new Date(to), key: 'selection' } });
 
@@ -183,7 +183,10 @@ class BookingPageView extends Component {
     makeReservation() {
         roomService.editReservation(this.bookingData).then((resp) => {
             alert(`Reservation for room ${this.state.roomData.name} has been edited`);
-            this.props.history.push('/my_reservations');
+
+            let is_admin = JSON.parse(localStorage.getItem('user')).is_admin;
+            if (is_admin) this.props.history.push('/all_reservations');
+            else this.props.history.push('/my_reservations');
         });
     }
 
@@ -197,7 +200,7 @@ class BookingPageView extends Component {
         this.calculateTotal();
         return (
             <Spin spinning={this.state.loading}>
-            <div className="Booking Page" style={{height: "100vh", paddingTop: '64px'}}>
+            <div className="EditPage" style={{height: "100vh", paddingTop: '64px'}}>
                 <div className="row1">
                     <div className="dataRange" >    
                         <DateRange
@@ -252,7 +255,7 @@ class BookingPageView extends Component {
                                     onClick={this.bookIt}
                                     size="large"
                                     style={{backgroundColor: '#0f2da0', border: 'none'}} 
-                                    className="bookItButton">Book it</Button>
+                                    className="bookItButton">Save</Button>
                             </Card>
                         </div>
                     </Affix>

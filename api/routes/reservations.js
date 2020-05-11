@@ -69,7 +69,7 @@ function sendRecords(type, res, values_of_fields, projected_fields) {
   
     Reservation.find(final_db_query, projected_fields, (err, items) => {
       
-      if(items.length === 0) {
+      if(err) {
         res.status(400);
         res.end();
         return;
@@ -105,7 +105,8 @@ router.post('/', async function(req, res, next) {
   var reservation = req.query;
   
   var newId = await Reservation.findOne().sort({id:-1});
-  newId = Number(newId.id) + 1;
+  newId = (newId === null) ? 1: Number(newId.id) + 1;
+  
   reservation["id"] = newId;
   if (reservation["additional_services"] !== undefined) {
     reservation["additional_services"] = JSON.parse(reservation["additional_services"]); 

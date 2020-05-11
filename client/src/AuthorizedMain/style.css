@@ -42,3 +42,7 @@
   .demo-infinite-container .ant-list-item:hover {
     background: #d9e0fa;
   }
+
+  .userInput {
+    margin-bottom: 20px;
+  }

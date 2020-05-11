@@ -9,6 +9,8 @@ import BookingPageView from './RoomPage/BookingPageView';
 import RoomPageView from './RoomPage/RoomPageView';
 import MyReservationsView from './MyReservations/MyReservationsView';
 import EditPageView from './RoomPage/EditPageView';
+import ProfileView from './Profile/ProfileView';
+import AllReservationsView from './MyReservations/AllReservationsView';
 
 
 class FAQWrapper extends React.Component {
@@ -25,8 +27,10 @@ const BaseRouter = () => (
             <Route path="/register" component={RegistrationView} />
             <Route path="/login" component={LoginView} />
             <Route path="/authorized" component={AuthorizedMainView} />
+            <Route path="/profile" component={ProfileView} />
             <Route path="/help" component={FAQWrapper} />
             <Route path="/my_reservations" component={MyReservationsView} />
+            <Route path="/all_reservations" component={AllReservationsView} />
             <Route path="/booking" component={BookingPageView} />
             <Route path="/edit" component={EditPageView} />
             <Route path="/room" component={RoomPageView} />

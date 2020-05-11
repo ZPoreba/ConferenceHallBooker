@@ -23,6 +23,13 @@ class RegistrationView extends Component {
     if(authService.isAuthenticated()) {
         this.props.history.push('/authorized');
     }
+
+    document.getElementById('registrationWrapper').addEventListener("keyup", function(event) {
+      event.preventDefault();
+      if (event.keyCode === 13) {
+        document.getElementById('submitButton').click();
+      }
+    });
 }
 
   registerHandler = async event => {
@@ -46,9 +53,11 @@ class RegistrationView extends Component {
       console.log(response.body);
 
       if(response.token) {
+          let is_admin = response.user.is_admin === undefined ? false: response.user.is_admin;
           const user = {
               email: this.state.email,
               user_id: response.user.id,
+              is_admin: is_admin,
               token: response.token
           };
           authService.authenticateUser(user);
@@ -73,7 +82,7 @@ class RegistrationView extends Component {
   render() {
     return (
       <div className="Registration banner" style={{height: "100vh", paddingTop: '64px'}}>
-          <div className="registrationDiv">
+          <div id="registrationWrapper" className="registrationDiv">
             <div className="registrationInput">
               <Input size="large" placeholder="nickname" onChange={(e) => this.setValue('nickname', e)} style={{width: "85%", backgroundColor: "#0f2da0", color: "white", border: "none"}} />
               <Input size="large" placeholder="email" onChange={(e) => this.setValue('email', e)} style={{width: "85%", backgroundColor: "#0f2da0", color: "white", border: "none"}} />
@@ -83,7 +92,7 @@ class RegistrationView extends Component {
               <Input.Password size="large" placeholder="password" onChange={(e) => this.setValue('password', e)}  style={{width: "85%", backgroundColor: "#0f2da0", color: "white", border: "none"}} />
               <Input.Password size="large" placeholder="repeat password" onChange={(e) => this.setValue('repeatPassword', e)}  style={{width: "85%", backgroundColor: "#0f2da0", color: "white", border: "none"}} />
             </div>
-              <Button className="button" onClick={this.registerHandler} style={{top: "85%", backgroundColor: "#0f2da0", border: "none", color: "white"}}>
+              <Button id="submitButton" className="button" onClick={this.registerHandler} style={{top: "85%", backgroundColor: "#0f2da0", border: "none", color: "white"}}>
                 Sign up
               </Button>
           </div>

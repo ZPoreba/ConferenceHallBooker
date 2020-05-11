@@ -65,6 +65,10 @@ function getFilterQuery(values_of_fields) {
       });
 
       if (key === 'price' || key === 'capacity' || key === 'area') db_query[key] = { "$gte": Number(value[0]), "$lte": Number(value[1]) };
+      else if (key === 'additional_services') {
+        db_query[key] = {};
+        db_query[key]["$all"] = value;
+      }
       else {
         db_query[key] = {};
         db_query[key]["$in"] = value;

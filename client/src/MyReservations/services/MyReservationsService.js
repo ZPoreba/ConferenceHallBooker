@@ -34,6 +34,23 @@ const getReservationsForUser = (id) => {
         });
 };
 
+const getAllReservations = () => {
+    let url = `${API_URL}/api/reservations`;
+    
+    const fetchData = {
+        method: "GET",
+        headers: new Headers(),
+        mode: 'cors',
+    };
+
+    return fetch(url, fetchData)
+        .then(response => checkStatus(response))
+        .then(response => response.json())
+        .catch(error => {
+            return {success: false, status: error.message}
+        });
+};
+
 const getRoomById = (id) => {
     let url = `${API_URL}/api/rooms`;
     const roomQs = {
@@ -116,5 +133,35 @@ const deleteReservation = (id) => {
         });
 };
 
+const setReservationStatus = (reservationQs) => {
+    let url = `${API_URL}/api/reservations`;
+    
+    const fetchData = {
+        method: "PUT",
+        headers: new Headers(),
+        mode: 'cors',
+    };
 
-export const myReservationsService = { getReservationsForUser, getRoomById, getRoomsByIds, deleteReservation };
+    var esc = encodeURIComponent;
+    var query = Object.keys(reservationQs)
+    .map(k => {
+        if (Array.isArray(reservationQs[k]))    
+            return esc(k) + '=' + esc(JSON.stringify(reservationQs[k]))
+        else 
+            return esc(k) + '=' + esc(reservationQs[k])
+    }
+    )
+    .join('&');
+
+    url = url + "?" + query;
+
+    return fetch(url, fetchData)
+        .then(response => checkStatus(response))
+        .then(response => response.json())
+        .catch(error => {
+            return {success: false, status: error.message}
+        });
+};
+
+
+export const myReservationsService = { getReservationsForUser, getRoomById, getRoomsByIds, deleteReservation, getAllReservations, setReservationStatus };

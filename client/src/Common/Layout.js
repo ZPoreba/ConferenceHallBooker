@@ -16,6 +16,7 @@ class CustomLayout extends React.Component{
         this.menuType = undefined;
         this.setMenu();
         this.iconPath = '/';
+
     }
 
     setMenu() {
@@ -25,6 +26,7 @@ class CustomLayout extends React.Component{
         type = window.location.pathname === "/authorized" 
             || window.location.pathname === "/help"
             || window.location.pathname === "/my_reservations" 
+            || window.location.pathname === "/all_reservations"
             || window.location.pathname.startsWith("/room/")
             || window.location.pathname.startsWith("/booking/")
             || window.location.pathname.startsWith("/edit/")
@@ -103,6 +105,7 @@ class CustomLayout extends React.Component{
     }
 
     onAuthorizedMenu = () => {
+        this.is_admin = JSON.parse(localStorage.getItem('user')).is_admin;
         return (
             <Menu
             theme="light"
@@ -112,6 +115,14 @@ class CustomLayout extends React.Component{
                     style={{float: 'right'}}>
                     <Link style={{color: "white"}} to="/" onClick={authService.logout}>LOG OUT</Link>
                 </Menu.Item>
+                { 
+                    this.is_admin ? 
+                        <Menu.Item
+                            key="admin_text"
+                            style={{float: 'left'}}>
+                            <a style={{color: "yellow"}}>ADMIN</a>
+                        </Menu.Item>: null
+                }
                 <Menu.Item
                     key="search"
                     style={{float: 'center'}}>
@@ -122,16 +133,30 @@ class CustomLayout extends React.Component{
                     style={{float: 'center'}}>
                     <Link style={{color: "white"}} to="/profile" >Profile</Link>
                 </Menu.Item>
-                <Menu.Item
-                    key="my_reservations"
-                    style={{float: 'center'}}>
-                    <Link style={{color: "white"}} to="/my_reservations" >My reservations</Link>
-                </Menu.Item>
-                <Menu.Item
-                    key="help"
-                    style={{float: 'center'}}>
-                    <Link style={{color: "white"}} to="/help" >Help</Link>
-                </Menu.Item>
+                { 
+                    !this.is_admin ? 
+                        <Menu.Item
+                            key="my_reservations"
+                            style={{float: 'center'}}>
+                            <Link style={{color: "white"}} to="/my_reservations" >My reservations</Link>
+                        </Menu.Item>: null
+                 }
+                { 
+                    !this.is_admin ? 
+                        <Menu.Item
+                            key="help"
+                            style={{float: 'center'}}>
+                            <Link style={{color: "white"}} to="/help" >Help</Link>
+                        </Menu.Item>: null 
+                }
+                { 
+                    this.is_admin ? 
+                        <Menu.Item
+                            key="admin"
+                            style={{float: 'center'}}>
+                            <Link style={{color: "white"}} to="/all_reservations" >All reservations</Link>
+                        </Menu.Item>: null
+                }
             </Menu>
         );
     }
